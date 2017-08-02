@@ -1,0 +1,2 @@
+--Provide a query that shows the top 5 most purchased tracks over all.
+SELECT t.Name AS "Song", COUNT(il.invoiceLineId) AS "# of Purchases" FROM track t, invoiceLine il, invoice i WHERE t.trackId = il.trackId AND i.invoiceId = il.invoiceId GROUP BY t.Name  ORDER BY COUNT(il.invoiceLineID) DESC limit 5; 

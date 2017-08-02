@@ -1,0 +1,2 @@
+--Provide a query that shows the count of customers assigned to each sales agent.
+SELECT e.firstName AS "Sales Agent", COUNT(c.supportRepId) AS "Number of Customers" FROM employee e, customer c WHERE c.supportRepId = e.employeeId GROUP BY e.firstName;

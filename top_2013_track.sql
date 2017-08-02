@@ -1,0 +1,2 @@
+-- Provide a query that shows the most purchased track of 2013.
+SELECT t.Name AS "Song", COUNT(il.invoiceLineId) AS "# of Purchases" FROM track t, invoiceLine il, invoice i WHERE t.trackId = il.trackId AND i.invoiceId = il.invoiceId AND invoiceDate LIKE '2013%' GROUP BY t.Name ORDER BY COUNT(il.invoiceLineID) DESC limit 1; 

@@ -1,0 +1,2 @@
+--Provide a query that shows all Invoices but includes the # of invoice line items.
+SELECT i.invoiceId AS "Invoices", COUNT(il.invoiceLineId) AS "# invoiceLines" FROM invoice i LEFT JOIN invoiceLine il WHERE i.invoiceId = il.invoiceId GROUP BY i.invoiceId;

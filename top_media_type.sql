@@ -1,0 +1,2 @@
+-- Provide a query that shows the most purchased Media Type.
+SELECT mt.Name, COUNT(il.TrackId) AS "Media Type" FROM MediaType mt, Track t, InvoiceLine il WHERE mt.MediaTypeId == t.MediaTypeId AND t.TrackId == il.TrackId Group BY mt.Name ORDER BY COUNT(il.TrackId) DESC LIMIT 1;
